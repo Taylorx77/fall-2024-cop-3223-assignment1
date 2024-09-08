@@ -1,0 +1,102 @@
+#include <stdio.h>
+#include <math.h>
+
+#define PI 3.14159  // Define value of PI
+
+
+double calculateDistance();
+double calculatePerimeter(double distance);
+double calculateArea(double distance);
+double calculateWidth();
+double calculateHeight();
+//Calculate distance
+int main(int argc, char **argv) {
+    double distance = calculateDistance();
+    calculatePerimeter(distance);
+    calculateArea(distance);
+    calculateWidth();
+    calculateHeight();
+    return 0;
+}
+
+//  calculate the distance between two points
+double calculateDistance() {
+    double x1, y1, x2, y2, distance;
+
+    // Enter coordinates for the first point
+    printf("Enter point 1 (x1, y1): ");
+    scanf("%lf %lf", &x1, &y1);
+
+    // Enter coordinates for the second point
+    printf("Enter point 2 (x2, y2): ");
+    scanf("%lf %lf", &x2, &y2);
+
+    // Calculate distance between the two points
+    distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+
+    // Print the entered points and the calculated distance
+    printf("Point #1 entered: x1 = %.2lf, y1 = %.2lf\n", x1, y1);
+    printf("Point #2 entered: x2 = %.2lf, y2 = %.2lf\n", x2, y2);
+    printf("The distance between the two points is %.2lf\n", distance);
+
+    return distance;
+}
+
+// calculate the perimeter of the circle
+double calculatePerimeter(double distance) {
+    double perimeter = PI * distance;
+
+    // Print the calculated perimeter
+    printf("The perimeter of the circle is %.2lf\n", perimeter);
+
+    return perimeter;
+}
+
+// calculate the area of the circle
+double calculateArea(double distance) {
+    double radius = distance / 2;
+    double area = PI * pow(radius, 2);
+
+    // Print the calculated area
+    printf("The area of the circle is %.2lf\n", area);
+
+    return area;
+}
+
+// calculate the width of the rectangle
+double calculateWidth() {
+    double x1, x2;
+
+    // Enter x-coordinates for the two points
+    printf("Enter point 1 x1: ");
+    scanf("%lf", &x1);
+    printf("Enter point 2 x2: ");
+    scanf("%lf", &x2);
+
+    // Calculate the width
+    double width = fabs(x2 - x1);
+
+    // Print the calculated width
+    printf("The width of the rectangle is %.2lf\n", width);
+
+    return width;
+}
+
+//  calculate the height of the rectangle
+double calculateHeight() {
+    double y1, y2;
+
+    // Enter y-coordinates for the two points
+    printf("Enter point 1 y1: ");
+    scanf("%lf", &y1);
+    printf("Enter point 2 y2: ");
+    scanf("%lf", &y2);
+
+    // Calculate the height
+    double height = fabs(y2 - y1);
+
+    // Print the calculated height
+    printf("The height of the rectangle is %.2lf\n", height);
+
+    return height;  // Return the calculated height
+}
